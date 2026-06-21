@@ -29,7 +29,7 @@ jobs:
       run: dotnet tool install --global dotnet-mgcb --version 3.8.4
 
     -  name: Build Content Pipeline
-       run: mgcb mgcb /@:Content\Content.mgcb /outputDir:Content\bin /intermediateDir:Content\obj
+       run: mgcb /@:Content\Content.mgcb /outputDir:Content\bin /intermediateDir:Content\obj
 
     -  name: restore dependencies
        run: dotnet restore

@@ -1,0 +1,42 @@
+
+name: .NET Core Desktop
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+
+    - name: Install mgcb tool
+      run: dotnet tool install --global dotnet-mgcb --version 3.8.4
+
+    -  name: Build Content Pipeline
+       run: mgcb mgcb /@:Content\Content.mgcb /outputDir:Content\bin /intermediateDir:Content\obj
+
+    -  name: restore dependencies
+       run: dotnet restore
+
+    -  name: build solution
+       run: dotnet build --configuration Release --no--restore 
+
+    # Execute all unit tests in the solution
+    # - name: Execute unit tests
+     # run: dotnet test --no-build --verbosity normal

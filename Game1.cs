@@ -15,6 +15,8 @@ public class Game1 : Game
     private Texture2D _texture;
     private readonly Dictionary<string, Texture2D> _textures = new ();
     private Texture2DAtlas _atlas;
+    private Texture2D _atlasTexture;
+    private Dictionary<string, Rectangle> _regions;
 
 
     public Game1()
@@ -56,6 +58,8 @@ public class Game1 : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         // TODO: use this.Content to load your game content here
+        _atlasTexture = Content.Load<Texture2D>("Textures/atlas");
+        _regions = Content.Load<Dictionary<string, Rectangle>>("Textures/atlasRegions");
 
         // load the packed image containing 32x32 frame
         var texture = Content.Load<Texture2D>("Textures/cards");
@@ -86,6 +90,11 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         // TODO: Add your drawing code here
+
+        // draw the player_idle_1 frame at (200, 150)
+        var sourceRect = _regions["player_idle_1"];
+
+        _spriteBatch.Draw(_atlasTexture, new Vector2(200, 150), sourceRect, Color.White);
 
         // draw the 13th region (zero-based) at (100, 100)
         _spriteBatch.Draw(_atlas[12], new Vector2(100, 100), Color.White);

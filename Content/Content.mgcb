@@ -15,11 +15,11 @@
 #begin AtlasTexture
 /processor:TextureProcessor
 /importer:TextureImporter
-/build:AtlasTexture.png:AtlasTexture.xnb
+/build:Textures/AtlasTexture.png:Textures/AtlasTexture.xnb
 #end
 
 #begin Atlas Region
 /processor:XmlProcessor
 /importer:XmlImporter
-/build:AtlasRegion.xml:AtlasRegion.xnb
+/build:Textures/atlasRegions.xml:Textures/atlasRegions.xnb
 #end

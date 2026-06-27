@@ -1,13 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent>
-	<Asset Type="System.Collections.Generic.Dictionary`2[System.String,Microsoft.Xna.Framework.Rectangle]">
+	<Asset Type="System.Collections.Generic.Dictionary[System.String,Microsoft.Xna.Framework.Rectangle]">
+		<Item>
+			<Key>player_idle_0</Key>
+			<Value>
+				<X>0</X>
+				<Y>0</Y>
+				<Width>64</Width>
+				<Height>64</Height>
+			</Value>
+		</Item>
+		<Item>
+			<Key>player_idle_1</Key>
+			<Value>
+				<X>64</X>
+				<Y>0</Y>
+				<Width>64</Width>
+				<Height>64</Height>
+			</Value>
+		</Item>
 	</Asset>
-	<Item>
-		<Key>player_idle_0</Key>
-		<Value>0,0,64,64</Value>
-	</Item>
-	<Item>
-		<Key>player_idle_1</Key>
-		<Value>64,0,64,64</Value>
-	</Item>
 </XnaContent>

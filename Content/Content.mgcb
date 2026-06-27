@@ -12,14 +12,15 @@
 
 
 #---------------------------------- Content ---------------------------------#
+
 #begin AtlasTexture
-/processor:TextureProcessor
 /importer:TextureImporter
-/build:Textures/AtlasTexture.png:Textures/AtlasTexture.xnb
+/processor:TextureProcessor
+/build:Textures/AtlasTexture.png
 #end
 
-#begin Atlas Region
-/processor:XmlProcessor
+#begin AtlasRegions
 /importer:XmlImporter
-/build:Textures/atlasRegions.xml:Textures/atlasRegions.xnb
+/processor:XmlProcessor
+/build:Textures/atlasRegions.xml
 #end

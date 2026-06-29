@@ -18,9 +18,3 @@
 /processor:TextureProcessor
 /build:Textures/AtlasTexture.png
 #end
-
-#begin AtlasRegions
-/importer:XmlImporter
-/processor:XmlProcessor
-/build:Textures/atlasRegions.xml
-#end
